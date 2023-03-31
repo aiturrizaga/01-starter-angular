@@ -7,14 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hola Valle Grande';
-  counter = 0;
-
-  increase(value: number) {
-    this.counter += value;
-  }
-
-  resetCounter() {
-    this.counter = 0;
-  }
-
 }
