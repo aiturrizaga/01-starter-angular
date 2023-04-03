@@ -1,34 +1,54 @@
 import { Component } from '@angular/core';
 
+export interface Heroe {
+  supername: string;
+  realname: string;
+  age: number;
+  country: string;
+}
+
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css']
+  styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent {
+  heroeSelected: Heroe = {
+    supername: 'Sin Nombre',
+    realname: 'No tiene',
+    age: 0,
+    country: 'Sin país',
+  };
 
-  heroeName = 'Spiderman';
-  realName = 'Peter Parker';
-  age = 17;
-  country = 'Perú';
+  heroes: Heroe[] = [
+    {
+      supername: 'Spiderman',
+      realname: 'Perter Parker',
+      age: 16,
+      country: 'Colombia',
+    },
+    {
+      supername: 'Ironman',
+      realname: 'Tony Stark',
+      age: 40,
+      country: 'Ecuador',
+    },
+    {
+      supername: 'Capitan America',
+      realname: 'Steve Rogers',
+      age: 80,
+      country: 'Bolivia',
+    },
+    {
+      supername: 'Thor',
+      realname: 'Thor',
+      age: 200,
+      country: 'Perú',
+    }
+  ];
 
-  heroes = ['Spiderman', 'Ironman', 'Capitan America', 'Thor'];
-
-  get nameUppercase() {
-    return this.realName.toUpperCase();
-  }
-
-  anyFunction() {
-    return `${this.heroeName} -> ${this.age}`;
-  }
-
-  changeHeroe() {
-    this.heroeName = 'Iron Man';
-    this.realName = 'Tony Stark';
-  }
-
-  changeHeroList(heroName: string) {
-    this.heroeName = heroName;
+  changeHero(heroe: Heroe) {
+    this.heroeSelected = heroe;
   }
 
 }

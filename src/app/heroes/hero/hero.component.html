@@ -1,41 +1,28 @@
 <div>
-    <h3>{{heroeName}}</h3>
+    <h3>{{heroeSelected.supername}}</h3>
     <hr>
     <div>
         <span>Nombre Real:</span>
-        <span>{{realName}}</span>
+        <span>{{heroeSelected.realname}}</span>
     </div>
 
     <div>
         <span>Edad:</span>
-        <span>{{age}}</span>
+        <span>{{heroeSelected.age}}</span>
     </div>
 
     <div>
         <span>Pais:</span>
-        <span>{{country}}</span>
+        <span>{{heroeSelected.country}}</span>
     </div>
-
-    <div>
-        <span>Nombre mayuscula:</span>
-        <span>{{nameUppercase}}</span>
-    </div>
-
-    <div>
-        <span>Alguna función:</span>
-        <span>{{anyFunction()}}</span>
-    </div>
-
-    <button *ngIf="heroeName === 'Spiderman'" (click)="changeHeroe()" type="button" class="btn btn-primary">Cambiar
-        heroe</button>
 
 </div>
 
 
 <ul class="list-group pt-4">
     <li *ngFor="let heroe of heroes" class="list-group-item">
-        {{heroe}}
-        <button type="button" (click)="changeHeroList(heroe)"
+        {{heroe.supername}}
+        <button type="button" (click)="changeHero(heroe)"
          class="btn btn-outline-warning">Ver</button>
     </li>
 </ul>
